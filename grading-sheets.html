@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SHS Launchpad — Grading Sheet Templates, MGC New Life Christian Academy">
+  <title>SHS Launchpad — Grading Sheet Templates</title>
+  <link rel="icon" type="image/png" href="assets/mgc-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    img, svg { display: block; }
+    a { text-decoration: none; }
+
+    :root {
+      --green-950:  #061410;
+      --green-900:  #0f3d22;
+      --green-800:  #165c33;
+      --green-700:  #1c7a42;
+      --green-600:  #22964f;
+      --green-400:  #4dbd74;
+      --green-200:  #a7f0be;
+      --green-100:  #d1fae5;
+      --green-50:   #f0fdf4;
+      --amber-600:  #c07a0a;
+      --amber-400:  #e8a81a;
+      --surface:    #ffffff;
+      --bg:         #f5fbf7;
+      --gray-100:   #f3f4f6;
+      --gray-200:   #e5e7eb;
+      --gray-400:   #9ca3af;
+      --gray-600:   #4b5563;
+      --gray-800:   #1f2937;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans:  'Plus Jakarta Sans', -apple-system, sans-serif;
+      --shadow-sm:  0 1px 4px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow-md:  0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+      --shadow-lg:  0 12px 24px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.04);
+      --ease:       cubic-bezier(0.4, 0, 0.2, 1);
+      --transition: all 0.25s var(--ease);
+      --radius-sm:  8px;
+      --radius-md:  12px;
+      --radius-lg:  16px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: var(--gray-800);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: sticky; top: 0; z-index: 200;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--green-100);
+      box-shadow: 0 1px 6px rgba(15,61,34,0.07);
+    }
+    .nav-inner {
+      max-width: 1120px; margin: 0 auto; padding: 0 28px;
+      height: 68px; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { display: flex; align-items: center; gap: 14px; }
+    .nav-emblem {
+      width: 46px; height: 46px; flex-shrink: 0;
+      display: grid; place-items: center;
+    }
+    .nav-emblem img {
+      width: 100%; height: 100%; object-fit: contain; display: block;
+    }
+    .nav-text-stack { display: flex; flex-direction: column; }
+    .nav-primary {
+      font-family: var(--font-serif); font-size: 19px; font-weight: 600;
+      color: var(--green-900); line-height: 1.15; letter-spacing: 0.01em;
+    }
+    .nav-secondary {
+      font-size: 10.5px; font-weight: 600; color: var(--green-700);
+      letter-spacing: 0.12em; text-transform: uppercase;
+    }
+    .breadcrumb {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12.5px; font-weight: 500; color: var(--gray-400);
+    }
+    .breadcrumb-home { color: var(--green-700); font-weight: 600; transition: color 0.2s ease; }
+    .breadcrumb-home:hover { color: var(--green-900); }
+    .breadcrumb-sep { color: var(--gray-400); font-size: 14px; }
+    .breadcrumb-current { color: var(--gray-600); font-weight: 600; }
+
+    /* ══════════════════════════ HERO ══════════════════════════ */
+    .hero {
+      position: relative; background: var(--green-900);
+      overflow: hidden; padding: 76px 28px 68px; text-align: center;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cpath d='M32 12v40M12 32h40' stroke='%23ffffff' stroke-width='0.6' stroke-opacity='0.04'/%3E%3Cpath d='M12 12l40 40M52 12L12 52' stroke='%23ffffff' stroke-width='0.4' stroke-opacity='0.025'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 15% 60%, rgba(28,122,66,0.35) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 85% 25%, rgba(192,122,10,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 50% 100%, rgba(6,20,16,0.6) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-bg-text {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      font-family: var(--font-serif); font-size: 260px; font-weight: 700;
+      color: rgba(255,255,255,0.03); line-height: 1; z-index: 1;
+      letter-spacing: -0.04em; white-space: nowrap; pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--amber-400); margin-bottom: 16px;
+      opacity: 0; animation: fadeUp 0.6s var(--ease) 0.1s both;
+    }
+    .hero-eyebrow::before, .hero-eyebrow::after {
+      content: ''; display: block; width: 22px; height: 1px;
+      background: var(--amber-400); opacity: 0.5;
+    }
+    .hero-heading {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 600; color: #ffffff;
+      line-height: 1.1; letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      opacity: 0; animation: fadeUp 0.6s var(--ease) 0.2s both;
+    }
+    .hero-heading em { font-style: italic; color: #86efac; }
+    .hero-rule {
+      display: flex; align-items: center; gap: 12px; justify-content: center;
+      margin-bottom: 16px;
+      opacity: 0; animation: fadeUp 0.6s var(--ease) 0.3s both;
+    }
+    .hero-rule-line { flex: 1; max-width: 50px; height: 1px; background: rgba(255,255,255,0.15); }
+    .hero-rule-diamond { width: 5px; height: 5px; background: var(--amber-400); transform: rotate(45deg); border-radius: 1px; }
+    .hero-body {
+      font-size: 14.5px; font-weight: 300; color: rgba(255,255,255,0.55);
+      opacity: 0; animation: fadeUp 0.6s var(--ease) 0.4s both;
+    }
+
+    /* ── SECTION ── */
+    .section { max-width: 1120px; margin: 0 auto; padding: 64px 28px; }
+    .section-header { margin-bottom: 32px; }
+    .section-eyebrow {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--green-700); margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: var(--font-serif); font-size: 32px;
+      font-weight: 600; color: var(--green-900); line-height: 1.15;
+    }
+    .section-title span { position: relative; display: inline-block; }
+    .section-title span::after {
+      content: ''; position: absolute; bottom: -3px; left: 0; right: 0;
+      height: 2px; background: var(--amber-400); border-radius: 1px;
+    }
+
+    /* ── DOC CARDS ── */
+    .docs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 14px;
+    }
+    .doc-card {
+      display: flex; align-items: center; gap: 16px;
+      padding: 20px 20px 20px 18px;
+      background: var(--surface);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .doc-card::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--green-600), var(--green-800));
+      transform: scaleY(0); transform-origin: center;
+      transition: transform 0.2s var(--ease);
+    }
+    .doc-card:hover {
+      border-color: var(--green-200);
+      box-shadow: var(--shadow-md), 0 0 0 3px rgba(28,122,66,0.07);
+      transform: translateY(-2px);
+    }
+    .doc-card:hover::before { transform: scaleY(1); }
+
+    .doc-icon {
+      width: 52px; height: 52px; flex-shrink: 0;
+      border-radius: var(--radius-md);
+      background: var(--green-50);
+      border: 1px solid var(--green-100);
+      display: grid; place-items: center;
+      transition: background 0.2s ease;
+    }
+    .doc-card:hover .doc-icon { background: var(--green-100); }
+    .doc-icon svg {
+      width: 24px; height: 24px; stroke: var(--green-700); fill: none;
+      stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* Ratio badge inside icon */
+    .doc-icon-badge {
+      font-family: var(--font-sans); font-size: 9px; font-weight: 800;
+      color: var(--green-700); letter-spacing: 0.04em; text-align: center;
+      line-height: 1.1;
+    }
+
+    .doc-content { flex: 1; min-width: 0; }
+    .doc-name {
+      display: block; font-size: 14.5px; font-weight: 600;
+      color: var(--gray-800); line-height: 1.3; margin-bottom: 4px;
+    }
+    .doc-desc {
+      display: block; font-size: 11.5px; font-weight: 400;
+      color: var(--gray-400); line-height: 1.4; margin-bottom: 4px;
+    }
+    .doc-type {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 11px; font-weight: 500; color: var(--gray-400);
+    }
+    .doc-type-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--green-400); flex-shrink: 0;
+    }
+
+    .doc-action {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--green-700);
+      white-space: nowrap; flex-shrink: 0;
+      transition: color 0.2s ease;
+    }
+    .doc-card:hover .doc-action { color: var(--green-600); }
+    .doc-arrow {
+      width: 14px; height: 14px; stroke: currentColor; fill: none;
+      stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+      transition: transform 0.2s var(--ease);
+    }
+    .doc-card:hover .doc-arrow { transform: translateX(3px); }
+
+    /* ── INFO NOTE ── */
+    .info-note {
+      margin-top: 24px;
+      padding: 14px 18px;
+      background: var(--green-50);
+      border: 1px solid var(--green-100);
+      border-radius: var(--radius-md);
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .info-note svg {
+      width: 16px; height: 16px; stroke: var(--green-700); fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .info-note p {
+      font-size: 12.5px; color: var(--green-800); line-height: 1.55; font-weight: 500;
+    }
+
+    /* ── CONTACT BANNER ── */
+    .contact-banner { max-width: 1120px; margin: 0 auto 64px; padding: 0 28px; }
+    .contact-inner {
+      background: linear-gradient(135deg, var(--green-900) 0%, var(--green-800) 100%);
+      border-radius: var(--radius-lg); padding: 28px 36px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; box-shadow: var(--shadow-md);
+    }
+    .contact-label {
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--green-400); margin-bottom: 4px;
+    }
+    .contact-msg {
+      font-family: var(--font-serif); font-size: 22px;
+      font-weight: 500; color: white; line-height: 1.3;
+    }
+    .contact-icon-wrap {
+      width: 52px; height: 52px; border-radius: var(--radius-md);
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.12);
+      display: grid; place-items: center; flex-shrink: 0;
+    }
+    .contact-icon-wrap svg {
+      width: 24px; height: 24px; stroke: var(--green-400); fill: none;
+      stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-950); padding: 40px 28px; text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-inner { max-width: 1120px; margin: 0 auto; }
+    .footer-cross { display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .footer-cross svg { width: 18px; height: 18px; stroke: rgba(255,255,255,0.2); fill: none; stroke-width: 2; }
+    .footer-school {
+      font-family: var(--font-serif); font-size: 18px; font-weight: 500;
+      color: rgba(255,255,255,0.85); letter-spacing: 0.02em; margin-bottom: 4px;
+    }
+    .footer-dept {
+      font-size: 12px; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--green-400); margin-bottom: 16px;
+    }
+    .footer-divider { width: 32px; height: 1px; background: rgba(255,255,255,0.1); margin: 0 auto 16px; }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.25); letter-spacing: 0.06em; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .docs-grid { grid-template-columns: 1fr; }
+      .hero { padding: 60px 20px; }
+      .hero-bg-text { font-size: 150px; }
+      .section { padding: 48px 20px; }
+      .contact-inner { flex-direction: column; text-align: center; }
+      .contact-icon-wrap { display: none; }
+      .contact-banner { padding: 0 20px; }
+      .breadcrumb { display: none; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="banner">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <div class="nav-emblem">
+          <img src="assets/mgc-logo.png" alt="MGC New Life Christian Academy logo" width="46" height="46" loading="eager">
+        </div>
+        <div class="nav-text-stack">
+          <span class="nav-primary">SHS Launchpad</span>
+          <span class="nav-secondary">MGC New Life Christian Academy</span>
+        </div>
+      </a>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html" class="breadcrumb-home">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-current">Grading Sheet Templates</span>
+      </nav>
+    </div>
+  </nav>
+
+
+  <!-- ── HERO ── -->
+  <header class="hero">
+    <div class="hero-bg-text" aria-hidden="true">GS</div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">General Resources</div>
+      <h1 class="hero-heading">Grading Sheet <em>Templates</em></h1>
+      <div class="hero-rule" aria-hidden="true">
+        <div class="hero-rule-line"></div>
+        <div class="hero-rule-diamond"></div>
+        <div class="hero-rule-line"></div>
+      </div>
+      <p class="hero-body">Select the grading format that applies to your class below.</p>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ── TEMPLATES ── -->
+    <section class="section" aria-labelledby="templates-heading">
+      <div class="section-header">
+        <p class="section-eyebrow">SHS Grading Templates</p>
+        <h2 class="section-title" id="templates-heading">
+          <span>Choose a Format</span>
+        </h2>
+      </div>
+      <div class="docs-grid">
+
+        <!-- 60-20-20 Grading Sheet -->
+        <a class="doc-card" data-link="gradingSheet602020" href="#" target="_blank" rel="noopener noreferrer" aria-label="60-20-20 Grading Sheet — opens in new tab">
+          <div class="doc-icon" aria-hidden="true">
+            <div class="doc-icon-badge">
+              60<br>20<br>20
+            </div>
+          </div>
+          <div class="doc-content">
+            <span class="doc-name">60-20-20 Grading Sheet</span>
+            <span class="doc-desc">Written Work · Performance Task · Quarterly Assessment</span>
+            <span class="doc-type">
+              <span class="doc-type-dot"></span>Google Sheets
+            </span>
+          </div>
+          <div class="doc-action">
+            Open
+            <svg class="doc-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- 50-50 Grading Sheet -->
+        <a class="doc-card" data-link="gradingSheet5050" href="#" target="_blank" rel="noopener noreferrer" aria-label="50-50 Grading Sheet — opens in new tab">
+          <div class="doc-icon" aria-hidden="true">
+            <div class="doc-icon-badge">
+              50<br>50
+            </div>
+          </div>
+          <div class="doc-content">
+            <span class="doc-name">50-50 Grading Sheet</span>
+            <span class="doc-desc">Two-component 50 / 50 weighting</span>
+            <span class="doc-type">
+              <span class="doc-type-dot"></span>Google Sheets
+            </span>
+          </div>
+          <div class="doc-action">
+            Open
+            <svg class="doc-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- 40-60 Grading Sheet -->
+        <a class="doc-card" data-link="gradingSheet4060" href="#" target="_blank" rel="noopener noreferrer" aria-label="40-60 Grading Sheet — opens in new tab">
+          <div class="doc-icon" aria-hidden="true">
+            <div class="doc-icon-badge">
+              40<br>60
+            </div>
+          </div>
+          <div class="doc-content">
+            <span class="doc-name">40-60 Grading Sheet</span>
+            <span class="doc-desc">Two-component 40 / 60 weighting</span>
+            <span class="doc-type">
+              <span class="doc-type-dot"></span>Google Sheets
+            </span>
+          </div>
+          <div class="doc-action">
+            Open
+            <svg class="doc-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+        <!-- 60-40 Grading Sheet -->
+        <a class="doc-card" data-link="gradingSheet6040" href="#" target="_blank" rel="noopener noreferrer" aria-label="60-40 Grading Sheet — opens in new tab">
+          <div class="doc-icon" aria-hidden="true">
+            <div class="doc-icon-badge">
+              60<br>40
+            </div>
+          </div>
+          <div class="doc-content">
+            <span class="doc-name">60-40 Grading Sheet</span>
+            <span class="doc-desc">Two-component 60 / 40 weighting</span>
+            <span class="doc-type">
+              <span class="doc-type-dot"></span>Google Sheets
+            </span>
+          </div>
+          <div class="doc-action">
+            Open
+            <svg class="doc-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Info note -->
+      <div class="info-note" role="note">
+        <svg viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="12" y1="8" x2="12" y2="12"/>
+          <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+        <p>
+          The grading format used depends on the subject. Please confirm with your department head or subject coordinator which template applies to your class before filling out the sheet.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── IT CONTACT BANNER ── -->
+    <div class="contact-banner">
+      <div class="contact-inner" role="complementary" aria-label="IT Assistance">
+        <div>
+          <p class="contact-label">Need Help?</p>
+          <p class="contact-msg">For assistance, please contact your in-house IT.</p>
+        </div>
+        <div class="contact-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 18v-6a9 9 0 0118 0v6"/>
+            <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3z"/>
+            <path d="M3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- ── FOOTER ── -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-cross" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <line x1="12" y1="2" x2="12" y2="22"/>
+          <line x1="5"  y1="8" x2="19" y2="8"/>
+        </svg>
+      </div>
+      <p class="footer-school">MGC New Life Christian Academy</p>
+      <p class="footer-dept">Senior High School Department</p>
+      <div class="footer-divider" aria-hidden="true"></div>
+      <p class="footer-copy">SHS Launchpad &mdash; Grading Sheet Templates</p>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════════════════════════
+       CONFIGURABLE LINKS — GRADING SHEET TEMPLATES
+       ─────────────────────────────────────────────────────────────
+       To update any link, replace the URL string for that key.
+       All page links update automatically. No other changes needed.
+  ══════════════════════════════════════════════════════════════ -->
+  <script>
+    const LINKS = {
+      gradingSheet602020: "#",  /* Replace with 60-20-20 Grading Sheet URL */
+      gradingSheet5050:   "#",  /* Replace with 50-50 Grading Sheet URL */
+      gradingSheet4060:   "#",  /* Replace with 40-60 Grading Sheet URL */
+      gradingSheet6040:   "#",  /* Replace with 60-40 Grading Sheet URL */
+    };
+
+    document.querySelectorAll("[data-link]").forEach(el => {
+      const key = el.dataset.link;
+      if (LINKS[key]) el.href = LINKS[key];
+    });
+  </script>
+
+</body>
+</html>
